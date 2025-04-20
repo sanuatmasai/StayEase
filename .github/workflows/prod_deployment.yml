@@ -37,10 +37,10 @@ jobs:
       - name: 📦 Deploy to EC2 via SSH
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.EC2_HOST }}
+          host: 65.2.70.255
           username: ec2-user
           key: ${{ secrets.EC2_SSH_KEY }}
-          port: ${{ secrets.EC2_PORT }}
+          port: 22
           script: |
             # go to the directory where you placed docker-compose.yml & .env
             cd /home/ec2-user
