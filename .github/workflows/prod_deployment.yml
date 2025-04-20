@@ -19,8 +19,11 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: 🧹 Clean & build (QA profile)
-        run: ./gradlew clean build -x test -Dspring.profiles.active=qa
+      - name: 🧱 Grant execute permissions to Gradle
+        run: chmod +x gradlew
+
+      - name: 🧹 Build Spring Boot app using Gradle (QA Profile)
+        run: ./gradlew clean build -Dspring.profiles.active=qa
 
       - name: 🐳 Login to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" \
