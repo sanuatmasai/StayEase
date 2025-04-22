@@ -13,4 +13,5 @@ public class StayeaseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StayeaseApplication.class, args);
 	}
+	
 }
